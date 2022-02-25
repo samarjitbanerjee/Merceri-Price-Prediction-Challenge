@@ -26,13 +26,17 @@ Decision Tree Regressor
 Basic understanding of Clustering with K-Means Algorithm
 Basic understanding of MLP, Embedding Layer
 
-# Evaluation
-The evaluation metric for this competition is Root Mean Squared Logarithmic Error.
-The RMSLE is calculated as
+# Data Source
+Data Source : https://www.kaggle.com/c/mercari-price-suggestion-challenge/data
 
-Where:
-epsilon is the RMSLE value (score)
-n is the total number of observations in the (public/private) data set,
-pi is your prediction of price, and
-ai is the actual sale price for i.
-log(x) is the natural logarithm of (x)
+# Understanding the Data
+train_id or test_id — the id of the listing
+name — the title of the listing. Note that we have cleaned the data to remove text that looks like prices (e.g. $20) to avoid leakage. These removed prices are represented as [rm]
+item_condition_id — the condition of the items provided by the seller
+category_name — category of the listing
+brand_name — brand name of the product
+price — the price that the item was sold for. This is the target variable that you will predict. The unit is USD. This column doesn’t exist in test.tsv since that is what you will predict.
+shipping — 1 if shipping fee is paid by seller and 0 by buyer
+item_description — the full description of the item. Note that we have cleaned the data to remove text that looks like prices (e.g. $20) to avoid leakage. These removed prices are represented as [rm]
+
+
