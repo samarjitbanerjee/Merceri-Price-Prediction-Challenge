@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<div align='center'>
+<h3>Merceri Price Prediction</h3>
+</div>
+</head>
+<div></div>
+<body>
+	<div align = 'center'>
+		<form action="/predict" method="POST">
+		<table>
+			<tr>
+				<label align = 'Left'>Product Name:</label>
+				<textarea name="name" type='text' id='Product_Name' style="width: 434px; height: 29px;"></textarea>
+			</tr>
+			</br></br>
+			<tr>
+					<label align = 'Left'>Item Condition Id:</label>
+			    <select name="item_condition_id" id="Item_Condition_Id">
+						<option value=1>New</option>
+						<option value=2>Like New</option>
+						<option value=3>Good</option>
+						<option value=4>Fair</option>
+						<option value=5>Poor</option>
+			    </select>
+					<label align = 'Left' style="padding-left: 155px;">Shipping:</label>
+			    <select name="shipping" id="Shipping">
+						<option value=0>Buyers-Shipped</option>
+						<option value=1>Sellers-Shipped</option>
+			    </select>
+			</tr>
+			</br></br>
+			<tr>
+				<label align = 'Left' for="category_name">Category Name:</label>
+				<input name="category_name" type='text' id='category_name'></input>
+				<label align = 'Left' for="Brand_Name">Brand_Name:</label>
+				<input name = 'brand_name' type='text' id='Brand_Name'></input>
+			</tr>
+			</br></br>
+			<tr>
+				<label align = 'Left'>Item Description:</label>
+				<textarea name = 'item_description' type='text' style="width: 416px; height: 36px;" id= 'item_description'></textarea>
+			</tr>
+			</br></br>
+			<tr>
+				<button title='Predict Sales Price' type="submit" value="Submit" onclick = validationFields();>Predict Sales Price</button>
+			</tr>
+			</table>
+		</form>
+	</div>
+</body>
+<script type="text/javascript">
+	function validationFields()
+	{
+		var Product_Name = document.getElementById('Product_Name').value
+		var item_description = document.getElementById('item_description').value
+		var category_name = document.getElementById('category_name').value
+		
+		if(Product_Name == '' || Product_Name == null)
+		{
+			alert('Please provide input to Product Name')
+			event.preventDefault();
+		}
+		else if(category_name == '' || category_name == null)
+		{
+			alert('Please provide input to Category Name')
+			event.preventDefault();
+		}
+		else if(item_description == '' || item_description == null)
+		{
+			alert('Please provide input to Item Description')
+			event.preventDefault();
+		}
+		return None;
+	}
+</script>
+</html>
